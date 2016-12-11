@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+
+version = "2.0.5"//aar的版本
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.3'
+
+    defaultConfig {
+        minSdkVersion 10
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:21.0.3'
+}
